@@ -1,0 +1,16 @@
+{
+  "name": "twitch-logger",
+  "version": "1.0.0",
+  "description": "A program to log Twitch chat to a local file",
+  "main": "twitch-logger.js",
+  "start": "twitch-logger.js",
+  "scripts": {
+    "start": "node twitch-logger.js"
+  },
+  "author": "GeneralNobody",
+  "license": "MIT",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "tmi.js": "^1.5.0"
+  }
+}
