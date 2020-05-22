@@ -10,7 +10,7 @@ const client = new tmi.Client({
         secure: true,
         reconnect: true
     },
-    channels: ["generalnobody1"]
+    channels: ["jchannel17"]
 });
 
 // Connect to the chat.
@@ -19,7 +19,7 @@ console.log("Connected!");
 var date = new Date;
 // var dateString = date.getDay() + "-" + date.getMonth() + "-" + date.getFullYear() + "_" + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
 // var filePath = "./output/" + dateString + ".log";
-fs.appendFileSync("./output/chatlog.txt", "\nStart of Twitch Chat log of '" + client.channels[0] + "', chat start date/time: " + date.getDay() + "-" + date.getMonth() + "-" + date.getFullYear() + "_" + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds() + "\n \n")
+fs.appendFileSync("./output/chatlog.txt", "\nStart of Twitch Chat log of '" + client.channel + "', chat start date/time: " + date.getDay() + "-" + date.getMonth() + "-" + date.getFullYear() + "_" + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds() + "\n \n")
 
 // Register event handlers.
 client.on("message", onMessageHandler);
