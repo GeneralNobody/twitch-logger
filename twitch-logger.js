@@ -1,8 +1,7 @@
-// Require modules.
 const tmi = require("tmi.js");
 const fs = require("fs");
 
-//var channel = "";
+var channel = "jchannel17";
 
 // Create twitch client (hidden).
 const client = new tmi.Client({
@@ -10,16 +9,14 @@ const client = new tmi.Client({
         secure: true,
         reconnect: true
     },
-    channels: ["jchannel17"]
+    channels: [channel]
 });
 
 // Connect to the chat.
 client.connect();
 console.log("Connected!");
-var date = new Date;
-// var dateString = date.getDay() + "-" + date.getMonth() + "-" + date.getFullYear() + "_" + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
-// var filePath = "./output/" + dateString + ".log";
-fs.appendFileSync("./output/chatlog.txt", "\nStart of Twitch Chat log of '" + client.channel + "', chat start date/time: " + date.getDay() + "-" + date.getMonth() + "-" + date.getFullYear() + "_" + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds() + "\n \n")
+var date = new Date().toDateString();
+fs.appendFileSync(`./output/${date}.txt`, "\nStart of Twitch Chat log of '" + channel + "'.\n\n");
 
 // Register event handlers.
 client.on("message", onMessageHandler);
@@ -29,5 +26,5 @@ function onMessageHandler (channel, tags, msg, self) {
     var today = new Date;
     var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
     console.log(time + "    " + `${tags["display-name"]}: ${msg}`);
-    fs.appendFileSync("./output/chatlog.txt", time + "    " + `${tags["display-name"]}: ${msg} \n`);
+    fs.appendFileSync(`./output/${date}.txt`, time + "    " + `${tags["display-name"]}: ${msg} \n`);
 }
