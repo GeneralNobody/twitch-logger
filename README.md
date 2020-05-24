@@ -9,7 +9,7 @@
  
 ## Usage
  When starting the program, it will create a .txt file in an output folder in the installation folder. This txt file will be named according to the date the program was run on. Any Twitch chatlogs of that day will be saved in that .txt file. When you run the program on another day, it will create a new file that has the date of that day as its name.  
- To select a channel to log the chat of, please change the "<insert channel name here>" in the script to whatever channel you want it to log the chat of. The channel name can be found when looking at the url of the Twitch streamer, so for https://www.twitch.tv/streamer the channel name will be 'streamer'.
+ To select a channel to log the chat of, please change the '<insert channel name here>' in the script to whatever channel you want it to log the chat of. The channel name can be found when looking at the url of the Twitch streamer, so for https://www.twitch.tv/streamer the channel name will be 'streamer'.
  Example:  
  Change 
  ```js
