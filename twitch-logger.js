@@ -1,7 +1,7 @@
 const tmi = require("tmi.js");
 const fs = require("fs");
 
-var channel = "jchannel17";
+var channel = "<insert channel name here>";
 
 // Create twitch client (hidden).
 const client = new tmi.Client({
