@@ -13,8 +13,10 @@
  Example:  
  Change 
  ```js
- var channel = "<insert channel name here>";```  
+ var channel = "<insert channel name here>";
+ ```  
  to  
  ```js
- var channel = "streamer";```
+ var channel = "streamer";
+ ```
  if the channel name is 'streamer'.
